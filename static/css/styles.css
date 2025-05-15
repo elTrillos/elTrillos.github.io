@@ -94,7 +94,7 @@ body::before {
 
 #flex {
     display: flex;
-    width: 75%;
+    width: 100%;
     max-width:1250px;
 }
 main {

@@ -32,20 +32,33 @@ body {
 
 body::before {
     content: "";
-    position: fixed; /* Keep the pseudo-element fixed during scrolling */
+    position: fixed;
     top: 50%;
     left: 50%;
-    width: 150%; /* Make the pseudo-element larger than the viewport */
-    height: 150%; /* Adjust height similarly */
+    width: 150%;
+    height: 150%;
     background-image: var(--background-grid);
-    background-size: 100px 100px;                  /* Set the size of the image */
-    background-repeat: repeat;                    /* Repeat the image both horizontally and vertically */
-    background-position: top left;                /* Start repeating from the top left corner */
-    transform: translate(-50%, -50%) rotate(15deg); /* Center and rotate */
-    transform-origin: center;    /* Rotate around the center */
-    z-index: -1; /* Place it behind the content */
-    pointer-events: none; /* Ensure it doesn’t block interactions */
+    background-size: 100px 100px;
+    background-repeat: repeat;
+    background-position: 0 0;
+    transform: translate(-50%, -50%) rotate(15deg);
+    transform-origin: center;
+    z-index: -1;
+    pointer-events: none;
+
+    animation: scrollBackground 60s linear infinite;
 }
+
+
+@keyframes scrollBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
 .topbar {
     background-image:var(--banner);
     height:50px;
